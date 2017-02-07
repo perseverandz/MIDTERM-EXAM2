@@ -14,6 +14,7 @@
     <br />
 <td width="10%"><b>Price</b></td>
 <td width="43%"><b>Quantity</b></td>
+    
 </tr><tr>
 <td width="48%">1 Fishing Rod &amp; Reel</td>
 <td width="10%">
@@ -22,8 +23,11 @@
 <option selected value="0">Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
-<option value="3">3</option>
-</select></td></tr><tr>
+<option value="3">3</option>    
+</select></td></tr>
+    
+    <tr>
+    
 <td width="48%">1 Takle Box</td>
 <td width="10%">
 <input type="text" name="txtBox" size="5" value="2.55"></td>
@@ -32,7 +36,19 @@
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
-    </select ></td></tr></table>
+    </select ></td></tr>
+    
+  <tr>
+<td width="48%">1 Taga Box</td>
+<td width="10%">
+<input type="text" name="txtTaga" size="5" value="1.75"></td>
+<td width="43%"><select size="1" name="qTaga">
+<option selected value="0">Select Quantity</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+    </select ></td></tr>
+    </table>
 <p align ="center">
 <input type="submit" value="Calculate your order" name="btnSubmit" onClick="calcTotal()">
 <input type="reset" value="Clear" name="BtnClear">
@@ -44,16 +60,19 @@
 
 <script language = "javascript">
 function calcTotal(){
-  var strRod, strBox, prRod, prBox, strTotal;
+  var strRod, strBox,strTaga, prRod, prBox,prTaga, strTotal;
   
   strRod = document.form.qRod.value;
    strBox = document.form.qBox.value;
+     strTaga = document.form.qTaga.value;
     prRod = document.form.txtRod.value;
      prBox = document.form.txtBox.value;
+     prTaga = document.form.txtTaga.value;
      
      strRod = parseInt(strRod)*prRod;
      strBox = parseInt(strBox)*prBox;
-     strTotal = (strRod + strBox);
+    strTaga = parseInt(strBox)*prTaga;
+     strTotal = (strRod + strBox + strTaga);
     document.form.txtTotal.value=strTotal;
     }
     </script>
