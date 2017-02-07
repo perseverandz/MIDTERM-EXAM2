@@ -2,6 +2,24 @@
     <head>
         <title>Fishing</title>
         <script language="javascript">
+            
+            function calcTotal(){
+  var strRod, strBox,strTaga, prRod, prBox,prTaga, strTotal;
+  
+  strRod = document.form.qRod.value;
+   strBox = document.form.qBox.value;
+     strTaga = document.form.qTaga.value;
+    prRod = document.form.txtRod.value;
+     prBox = document.form.txtBox.value;
+     prTaga = document.form.txtTaga.value;
+     
+     strRod = parseInt(strRod)*prRod;
+     strBox = parseInt(strBox)*prBox;
+    strTaga = parseInt(strTaga)*prTaga;
+     strTotal = (strRod + strBox + strTaga);
+    document.form.txtTotal.value=strTotal;
+    }
+            
 function selecColor(selectColor){
 document.bgColor=selectColor;
 }
@@ -63,24 +81,7 @@ document.bgColor=selectColor;
 <input type="text" name="txtTotal" size="10" value="0.00"></p>
 </form>
 
-<script language = "javascript">
-function calcTotal(){
-  var strRod, strBox,strTaga, prRod, prBox,prTaga, strTotal;
-  
-  strRod = document.form.qRod.value;
-   strBox = document.form.qBox.value;
-     strTaga = document.form.qTaga.value;
-    prRod = document.form.txtRod.value;
-     prBox = document.form.txtBox.value;
-     prTaga = document.form.txtTaga.value;
-     
-     strRod = parseInt(strRod)*prRod;
-     strBox = parseInt(strBox)*prBox;
-    strTaga = parseInt(strTaga)*prTaga;
-     strTotal = (strRod + strBox + strTaga);
-    document.form.txtTotal.value=strTotal;
-    }
-    </script>
+
 
     <center>
 <h3> Choose a color for your background </h3>
