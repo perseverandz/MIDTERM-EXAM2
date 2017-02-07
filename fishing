@@ -35,10 +35,33 @@
 <p align="center">Thank you for your purchase.</p>
 <p align="center">Your total is:</p>
 <p align="center">
-<input>
+<input type="text" name="txtTotal" size="10" value="0.00"></p>
+</form>
+
+<script language = "javascript">
+function calcTotal(){
+  var strRod, strBox, prRod, prBox, strTotal;
+  
+  strRod = document.form.qRod.value;
+   strBox = document.form.qBox.value;
+    prRod = document.form.txtRod.value;
+     prBox = document.form.txtBox.value;
+     
+     strRod = parseInt(strRod)*prRod;
+     strBox = parseInt(strBox)*prBox;
+     strTotal = (strRod + strBox);
+    document.form.txtTotal.value=strTotal;
+    }
+    </script>
 
 
-/* */
+
+
+
+}
+
+
+
 <h3> Choose a color for your background </h3>
 <form name = "frmColor action ="javascript:void(0;)">
 <input type = "submit" value = "White" name = "bW" onClick="selectColor('White')">
@@ -48,7 +71,7 @@
 <input type = "submit" value = "Purple" name = "bP" onClick="selectColor('Purple')">
 <input type = "submit" value = "Silver" name = "bS" onClick="selectColor('Silver')">
 <input type = "submit" value = "Red" name = "bR" onClick="selectColor('Red')">
-
+</form>
 <script language="javascript">
 function selecColor(selectColor){
 document.bgColor=selectColor;
